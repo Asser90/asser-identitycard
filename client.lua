@@ -13,7 +13,7 @@ end)
 Citizen.CreateThread(function()
 	while true do
 		Wait(0)
-		if IsControlJustReleased(0, 322) and open or IsControlJustReleased(0, 177) and open then
+		if IsControlJustReleased(0, 322) and show or IsControlJustReleased(0, 177) and show then
 			SendNUIMessage({
 				action = "hide"
 			})
