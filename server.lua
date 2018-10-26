@@ -1,14 +1,13 @@
 local ESX = nil
--- ESX
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
--- Open ID card
-RegisterServerEvent('jsfour-idcard:open')
-AddEventHandler('jsfour-idcard:open', function(ID, targetID, type)
-	local identifier = ESX.GetPlayerFromId(ID).identifier
-	local _source 	 = ESX.GetPlayerFromId(targetID).source
+RegisterServerEvent('identitycardd:show')
+AddEventHandler('identitycardd:show', function(id, targetid, type)
 
-	MySQL.Async.fetchAll('SELECT firstname, lastname, dateofbirth, sex, height FROM users WHERE identifier = @identifier', {['@identifier'] = identifier},
+	local identifier = ESX.GetPlayerFromId(id).identifier
+	local _source 	 = ESX.GetPlayerFromId(targetid).source
+
+	MySQL.Async.fetchAll('SELECT firstname, lastname, dateofbirth, lastdigits FROM users WHERE identifier = @identifier', {['@identifier'] = identifier},
 	function (user)
 		if (user[1] ~= nil) then
 			MySQL.Async.fetchAll('SELECT type FROM user_licenses WHERE owner = @identifier', {['@identifier'] = identifier},
@@ -17,8 +16,9 @@ AddEventHandler('jsfour-idcard:open', function(ID, targetID, type)
 					user = user,
 					licenses = licenses
 				}
-				TriggerClientEvent('jsfour-idcard:open', _source, array, type)
+				TriggerClientEvent('identitycardd:show', _source, array, type)
 			end)
 		end
 	end)
+
 end)

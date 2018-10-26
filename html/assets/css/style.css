@@ -2,16 +2,10 @@
   font-family: justsignature;
   src: url('../fonts/justsignature/JustSignature.woff');
 }
-body, html {
-  width: 100%;
-  height: 100%;
-}
 p {
   padding: 0;
   margin: 0;
-  text-transform: uppercase;
-  color: #9e9e9e;
-  font-size: 12px;
+  font-family: Arial,Helvetica Neue,Helvetica,sans-serif; 
 }
 #id-card {
   position: relative;
@@ -20,49 +14,111 @@ p {
   float: right;
   width: 457px;
   height: 272px;
-  padding: 54px 17px 10px 144px;
+  padding: 0 0 0 0;
+  display:none;
   background: url("../images/idcard.png");
 }
-img {
-  position: absolute;
-  left:7px;
-  top:5px;
+#license {
+  position: relative;
+  display: none;
+  margin: 230px 50px 0 0;
+  float: right;
+  width: 457px;
+  height: 272px;
+  padding: 0 0 0 0;
+  display:none;
+  background: url("../images/idcard.png");
 }
-#name {
-  font-weight: bolder;
-  font-size: 18px;
-  color: #282828;
+.person-details{
+	position:absolute;
+	top:144px;
+	left:35px;
+	font-size:18px;
+	line-height:18px;
 }
-#inline {
-  position: absolute;
-  top: 109px;
+
+.lastname{
+	font-size:10px;
+	font-weight:bold;
+	position:absolute;
+	top:54px;
+	left:155px;
 }
-#dob {
-  position: absolute;
-  left: 0;
-  width: 100px;
+
+.firstname{
+	font-size:10px;
+	font-weight:bold;
+	position:absolute;
+	top:70px;
+	left:155px;
 }
-#sex {
-  position: absolute;
-  left: 90px;
+
+.licensedob{
+	font-size:10px;
+	font-weight:bold;
+	position:absolute;
+	top:87px;
+	left:155px;
 }
-#height {
-  position: absolute;
-  left: 150px;
-  width: 60px;
+
+.validfrom{
+	font-size:10px;
+	font-weight:bold;
+	position:absolute;
+	top:104px;
+	left:155px;
 }
-#signature {
-  position: absolute;
-  bottom: 76px;
-  left: 152px;
-  color: #b1b177;
-  font-size: 19px;
-  text-transform:capitalize;
-  font-family: justsignature;
+.validto{
+	font-size:10px;
+	font-weight:bold;
+	position:absolute;
+	top:120px;
+	left:155px;
 }
-#licenses {
-  position: absolute;
-  top: 109px;
-  right: 33px;
-  width: 50px;
+.police{
+	font-size:10px;
+	font-weight:bold;
+	position:absolute;
+	top:104px;
+	left:240px;
+}
+.cpr{	
+	font-size:10px;
+	font-weight:bold;
+	position:absolute;
+	top:120px;
+	left:240px;
+}
+.licensenr{
+	font-size:10px;
+	font-weight:bold;
+	position:absolute;
+	top:136px;
+	left:155px;
+}
+.sig{
+	color: #222222;
+	font-size: 19px;
+	text-transform:capitalize;
+	font-family: justsignature;
+	position:absolute;
+	top:170px;
+	left:165px;
+}
+.licensetypes{
+	font-size:10px;
+	font-weight:bold;
+	position:absolute;
+	top:213px;
+	left:48px;
+}
+
+.socialcpr{
+	position:absolute;
+	top:110px;
+	left:35px;
+	font-family: Arial,Helvetica Neue,Helvetica,sans-serif; 
+	font-weight:bold;
+	font-size:22px;
+	line-height:18px;
 }

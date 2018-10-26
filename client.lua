@@ -1,25 +1,23 @@
-local open = false
+local show = false
 
--- Open ID card
-RegisterNetEvent('jsfour-idcard:open')
-AddEventHandler('jsfour-idcard:open', function( data, type )
-	open = true
+RegisterNetEvent('identitycardd:show')
+AddEventHandler('identitycardd:show', function( data, type )
+	show = true
 	SendNUIMessage({
-		action = "open",
+		action = "show",
 		array  = data,
 		type   = type
 	})
 end)
 
--- Key events
 Citizen.CreateThread(function()
 	while true do
 		Wait(0)
 		if IsControlJustReleased(0, 322) and open or IsControlJustReleased(0, 177) and open then
 			SendNUIMessage({
-				action = "close"
+				action = "hide"
 			})
-			open = false
+			show = false
 		end
 	end
 end)
