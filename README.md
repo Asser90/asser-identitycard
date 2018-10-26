@@ -3,6 +3,8 @@ Dette er idkort baseret på jsfour's resource @ https://github.com/jonassvensson
 
 Denne version indeholder kun kørekort og sygesikringsbevis, dog er begge designet til at ligne dem vi bruger i Danmark.
 
+![Alt text](http://itseasy.dk/e5818b9e.png "Asser IdentityCard")
+
 ## LICENS
 //Fra js-four ( forked )
 Please don't sell or reupload this resource
